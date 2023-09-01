@@ -17,11 +17,16 @@ import {
 import RecyclingLogo from "@/images/logos/recycling.webp?jsx";
 
 import NutriaSoftLogo from "@/images/logos/nutriasoft.svg?jsx";
-import image1 from "@/images/photos/image-1.jpg?jsx";
-import image2 from "@/images/photos/image-2.jpg?jsx";
-import image3 from "@/images/photos/image-3.jpg?jsx";
-import image4 from "@/images/photos/image-4.jpg?jsx";
-import image5 from "@/images/photos/image-5.jpg?jsx";
+import image5 from "@/images/photos/Amber312.png?jsx";
+import image5Dark from "@/images/photos/Blue2.png?jsx";
+import image4 from "@/images/photos/bellesarosa.png?jsx";
+import image2Dark from "@/images/photos/blue.png?jsx";
+import image3Dark from "@/images/photos/centerDark.png?jsx";
+import image1Dark from "@/images/photos/cityFlowers.png?jsx";
+import image3 from "@/images/photos/principal.png?jsx";
+import image2 from "@/images/photos/theamber.png?jsx";
+import image1 from "@/images/photos/therose.png?jsx";
+import image4Dark from "@/images/photos/thewhite.png?jsx";
 import { Qclsx } from "@/lib/Qclsx";
 import { formatDate } from "@/lib/formatDate";
 import type { HTMLAttributes } from "@builder.io/qwik";
@@ -237,7 +242,28 @@ const Photos = component$(() => {
   return (
     <div class="mt-16 sm:mt-20">
       <div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((Image, imageIndex) => (
+        {[
+          {
+            light: image1,
+            dark: image1Dark,
+          },
+          {
+            light: image2,
+            dark: image2Dark,
+          },
+          {
+            light: image3,
+            dark: image3Dark,
+          },
+          {
+            light: image4,
+            dark: image4Dark,
+          },
+          {
+            light: image5,
+            dark: image5Dark,
+          },
+        ].map((Image, imageIndex) => (
           <div
             key={`${imageIndex}+imageMain`}
             class={Qclsx(
@@ -245,10 +271,15 @@ const Photos = component$(() => {
               rotations[imageIndex % rotations.length]
             )}
           >
-            <Image
+            <Image.dark
               alt=""
               sizes="(min-width: 640px) 18rem, 11rem"
-              class="absolute inset-0 h-full w-full object-cover"
+              class="absolute inset-0 h-full w-full object-cover hidden dark:block"
+            />
+            <Image.light
+              alt=""
+              sizes="(min-width: 640px) 18rem, 11rem"
+              class="absolute inset-0 h-full w-full object-cover dark:hidden"
             />
           </div>
         ))}
@@ -263,7 +294,8 @@ export default component$(() => {
       <Container class="mt-9">
         <div class="max-w-2xl">
           <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software designer, founder, and amateur astronaut.
+            Software developer passionate about AI-driven photo editing and
+            inspired by the beauty of flowers
           </h1>
           <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I’m Spencer, a software designer and entrepreneur based in New York
@@ -309,7 +341,8 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Software designer, founder, and amateur astronaut",
+  title:
+    "Software developer passionate about AI-driven photo editing and inspired by the beauty of flowers",
   meta: [
     {
       name: "description",
