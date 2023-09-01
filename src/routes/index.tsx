@@ -111,11 +111,15 @@ const Article = component$<{
 const SocialLink = component$<
   LinkProps & {
     Icon: any;
+    alt?: string;
   }
->(({ Icon, ...props }) => {
+>(({ Icon, alt, ...props }) => {
   return (
     <Link class="group -m-1 p-1" {...props}>
-      <Icon class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+      <Icon
+        alt={alt}
+        class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+      />
     </Link>
   );
 });
@@ -188,10 +192,10 @@ const Resume = component$(() => {
         <span class="ml-3">Work</span>
       </h2>
       <ol class="mt-6 space-y-4">
-        {resume.map(({ Logo, ...Logo }, roleIndex) => (
+        {resume.map(({ Logo, ...role }, roleIndex) => (
           <li key={roleIndex} class="flex gap-4">
             <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Logo class="h-7 w-7" alt={`${Logo.company} Icon`} />
+              <Logo class="h-7 w-7" alt={`${role.company} Icon`} />
             </div>
             <dl class="flex flex-auto flex-wrap gap-x-2">
               <dt class="sr-only">Company</dt>
