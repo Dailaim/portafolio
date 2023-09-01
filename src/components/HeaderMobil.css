@@ -1,0 +1,64 @@
+/* 
+Animation:
+enter="duration-150 ease-out"
+enterFrom="opacity-0"
+enterTo="opacity-100"
+leave="duration-150 ease-in"
+leaveFrom="opacity-100"
+leaveTo="opacity-0" */
+
+.enterBg {
+    position:relative;
+
+    animation-name: EnterAnimation;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    /* a casa */
+}
+
+@keyframes EnterAnimation {
+    from {
+        backdrop-filter: blur(0);
+        opacity:0;
+    }
+    to {
+        opacity:1;
+        backdrop-filter: blur(4px);
+    }
+}
+
+.enterContent {
+    animation-name: EnterBoxAnimation;
+    animation-duration: .15s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+@keyframes EnterBoxAnimation {
+    from {
+        top:1rem;
+        scale:0.95;
+        opacity:0;
+    }
+    to {    
+        scale:1;
+        opacity:1;
+    }
+}
+
+.out {
+    animation-name: ExitBoxAnimation;
+    animation-duration: .15s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+@keyframes ExitBoxAnimation {
+    from {
+        scale:1;
+        opacity:1;
+    }
+    to {
+        scale:0.95;
+        opacity:0;
+    }
+}
