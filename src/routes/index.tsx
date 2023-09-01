@@ -24,7 +24,7 @@ import image4 from "@/images/photos/image-4.jpg?jsx";
 import image5 from "@/images/photos/image-5.jpg?jsx";
 import { Qclsx } from "@/lib/Qclsx";
 import { formatDate } from "@/lib/formatDate";
-import type { FunctionComponent, HTMLAttributes } from "@builder.io/qwik";
+import type { HTMLAttributes } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead, LinkProps } from "@builder.io/qwik-city";
 import { Link } from "@builder.io/qwik-city";
@@ -154,23 +154,15 @@ const Newsletter = component$(() => {
 });
 
 const Resume = component$(() => {
-  const resume: {
-    company: string;
-    title: string;
-    Logo: FunctionComponent<
-      Omit<
-        HTMLAttributes<HTMLImageElement>,
-        "src" | "width" | "height" | "srcSet"
-      >
-    >;
-    start: { label?: string; dateTime: string };
-    end: { label?: string; dateTime: string };
-  }[] = [
+  const resume = [
     {
       company: "NutriaSoft (FaztCommunity)",
       title: "CEO",
-      Logo: NutriaSoftLogo as any,
-      start: { dateTime: "2021" },
+      Logo: NutriaSoftLogo,
+      start: {
+        label: undefined,
+        dateTime: "2021",
+      },
       end: {
         label: "Present",
         dateTime: new Date().getFullYear().toString(),
@@ -179,7 +171,7 @@ const Resume = component$(() => {
     {
       company: "Recycling Bikes",
       title: "Full-Stack Software Engineer",
-      Logo: RecyclingLogo as any,
+      Logo: RecyclingLogo,
       start: { dateTime: "2022" },
       end: { dateTime: "2023" },
     },
