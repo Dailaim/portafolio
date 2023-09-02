@@ -10,7 +10,7 @@ const particlesInit = $(async (engine: Engine): Promise<void> => {
 export const ParticlesBackground = component$(() => {
   const visibleSig = useSignal(false);
 
-  useVisibleTask$(({ track, cleanup }) => {
+  useVisibleTask$(({ track }) => {
     track(() => visibleSig.value);
     const initParticles = async () => {
       setTimeout(() => {
