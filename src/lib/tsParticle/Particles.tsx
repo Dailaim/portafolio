@@ -5,14 +5,14 @@ import {
 } from "@builder.io/qwik";
 import { Container, tsParticles } from "tsparticles-engine";
 import type { IParticlesProps } from "./IParticlesProps";
-import { deepCompare } from "./Utils";
 
 /**
  * @param (props:IParticlesProps) Particles component properties
  */
 const Particles = component$<IParticlesProps>((props) => {
-  const init= useSignal(false);
-  const library = useSignal<NoSerialize<Container | undefined>>(undefined);
+  
+  const initSig= useSignal(false);
+  const librarySig = useSignal<NoSerialize<Container | undefined>>(undefined);
 
   const id = props.id ?? "tsparticles";
 
@@ -23,27 +23,26 @@ const Particles = component$<IParticlesProps>((props) => {
     height,
     width,
     loaded
-    
   } = props;
 
-  useVisibleTask$(({track, cleanup}) => {
-    track(()=> init.value);
+  useVisibleTask$(function Initializer({track, cleanup})  {
+
+    track(()=> initSig.value);
+
       const loadParticles = $(async () => {
-          if (!init) return;
+          if (!initSig.value) return;
 
           const container = await tsParticles.load({
               url: props.url,
               id,
-              options: props.options ?? props.params,
-            
+              options: props.options ?? props.params
           });
 
           if (props.container) {
               props.container.value  = noSerialize(container);
           }
          
-
-          library.value = noSerialize(container);
+          librarySig.value = noSerialize(container);
 
           if (loaded) {
               await loaded(container!);
@@ -55,28 +54,28 @@ const Particles = component$<IParticlesProps>((props) => {
               await InitFC!(tsParticles);
           }
 
-          init.value = true;
+          initSig.value = true;
           await loadParticles();
       };
 
       initParticles();
 
       cleanup(() => {
-          if (library.value) {
-              library.value.destroy();
-              library.value = undefined;
+          if (librarySig.value) {
+            librarySig.value.destroy();
+            librarySig.value = undefined;
           }
       });
   });
 
-  useVisibleTask$(() => {
-      if (!deepCompare(props, library, key => key.startsWith("_"))) {
-          if (library.value) {
-            library.value.destroy();
-              library.value = (undefined);
+/*   useVisibleTask$(() => {
+      if (!deepCompare(props, librarySig.value, key => key.startsWith("_"))) {
+          if (librarySig.value) {
+            librarySig.value.destroy();
+            librarySig.value = (undefined);
           }
       }
-  });
+  }); */
 
   return (
     <div class={className} id={id}>
