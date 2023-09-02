@@ -25,9 +25,12 @@ export const ParticlesBackground = component$(() => {
     <>
       <Particles
         id="tsparticles"
-        class={{
-          hidden: !visibleSig.value,
-        }}
+        class={[
+          "hidden",
+          {
+            "md:block": visibleSig.value,
+          },
+        ]}
         options={{
           background: {
             opacity: 0,
