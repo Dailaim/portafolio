@@ -11,7 +11,7 @@ const NavLink = component$<
   return (
     <Link
       href={href}
-      class="transition hover:text-teal-500 dark:hover:text-teal-400"
+      class="transition hover:text-teal-500 dark:hover:text-violet-500"
     >
       <Slot />
     </Link>
