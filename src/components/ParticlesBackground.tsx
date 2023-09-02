@@ -1,5 +1,5 @@
 import Particles from "@/lib/tsParticle";
-import { $, component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { $, component$ } from "@builder.io/qwik";
 import { loadFull } from "tsparticles";
 import type { Engine } from "tsparticles-engine";
 
@@ -8,29 +8,11 @@ const particlesInit = $(async (engine: Engine): Promise<void> => {
 });
 
 export const ParticlesBackground = component$(() => {
-  const visibleSig = useSignal(false);
-
-  useVisibleTask$(({ track }) => {
-    track(() => visibleSig.value);
-    const initParticles = async () => {
-      setTimeout(() => {
-        visibleSig.value = true;
-      }, 2300);
-    };
-
-    initParticles();
-  });
-
   return (
     <>
       <Particles
         id="tsparticles"
-        class={[
-          "hidden",
-          {
-            "md:block": visibleSig.value,
-          },
-        ]}
+        class={["hidden md:block"]}
         options={{
           background: {
             opacity: 0,
