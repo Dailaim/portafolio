@@ -26,7 +26,7 @@ export const Avatar = component$<
 >(({ large = false, class: className, ...props }) => {
   return (
     <Link
-      href="./../"
+      href="/"
       aria-label="Home"
       class={Qclsx(className, "pointer-events-auto")}
       {...props}
