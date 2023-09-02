@@ -1,5 +1,5 @@
 import Particles from "@/lib/tsParticle";
-import { $, component$ } from "@builder.io/qwik";
+import { $, component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { loadFull } from "tsparticles";
 import type { Engine } from "tsparticles-engine";
 
@@ -8,10 +8,26 @@ const particlesInit = $(async (engine: Engine): Promise<void> => {
 });
 
 export const ParticlesBackground = component$(() => {
+  const visibleSig = useSignal(false);
+
+  useVisibleTask$(({ track, cleanup }) => {
+    track(() => visibleSig.value);
+    const initParticles = async () => {
+      setTimeout(() => {
+        visibleSig.value = true;
+      }, 2300);
+    };
+
+    initParticles();
+  });
+
   return (
     <>
       <Particles
         id="tsparticles"
+        class={{
+          hidden: !visibleSig.value,
+        }}
         options={{
           background: {
             opacity: 0,
@@ -80,10 +96,16 @@ export const ParticlesBackground = component$(() => {
               value: { min: 1, max: 5 },
             },
           },
-          detectRetina: true,
+          detectRetina: false,
         }}
         init={particlesInit}
-        canvasClassName="-z-999 top-0 left-0 w-screen h-screen"
+        style={{
+          zIndex: -999,
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100vw",
+        }}
       />
     </>
   );

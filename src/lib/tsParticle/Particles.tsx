@@ -35,13 +35,13 @@ const Particles = component$<IParticlesProps>((props) => {
               url: props.url,
               id,
               options: props.options ?? props.params,
-              fpsLimit: 60
+            
           });
 
           if (props.container) {
               props.container.value  = noSerialize(container);
           }
-          console.log("container", container?.fpsLimit);
+         
 
           library.value = noSerialize(container);
 
