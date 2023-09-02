@@ -21,6 +21,7 @@ export default component$(() => {
   return (
     <span class="h-full antialiased min-h-screen">
       <span class="flex h-full bg-zinc-50 dark:bg-black">
+        <div class=" min-h-screen min-w-screen" />
         <Providers>
           <ParticlesBackground />
           <div class="flex w-full">
