@@ -298,10 +298,12 @@ export default component$(() => {
             inspired by the beauty of flowers
           </h1>
           <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Spencer, a software designer and entrepreneur based in New York
-            City. I’m the founder and CEO of Planetaria, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+            I'm Leonardo, a software developer who blends the art of artificial
+            intelligence with aesthetics. From Colombia, I've revolutionized
+            photo editing with AI, always drawing inspiration from the delicate
+            beauty of flowers. My career has been marked by bold innovations,
+            cutting-edge technologies, and an unwavering commitment to
+            excellence. Welcome to my digital journey!
           </p>
           <div class="mt-6 flex gap-6">
             <SocialLink

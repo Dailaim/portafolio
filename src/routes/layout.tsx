@@ -1,6 +1,7 @@
 import { component$, Slot } from "@builder.io/qwik";
 
 import { Layout } from "@/components/Layout";
+import { ParticlesBackground } from "@/components/ParticlesBackground";
 import { myName } from "@/lib/const";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { Providers } from "./providers";
@@ -21,6 +22,7 @@ export default component$(() => {
     <span class="h-full antialiased min-h-screen">
       <span class="flex h-full bg-zinc-50 dark:bg-black">
         <Providers>
+          <ParticlesBackground />
           <div class="flex w-full">
             <Layout>
               <Slot />
