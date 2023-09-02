@@ -51,7 +51,7 @@ export default component$(() => {
     >
       <div class="space-y-20">
         <ToolsSection title="Workstation">
-          <Tool title="16” Asus TUF Gaming F15, 32GB RAM (2021)">
+          <Tool title="Laptop Asus TUF Gaming F15, 32GB RAM">
             My Asus TUF Gaming F15 isn't just a device, it's my digital anchor.
             Beyond its undeniable speed, it's the rock I rely on for hefty
             projects. When I dive into mobile programming with those pesky
