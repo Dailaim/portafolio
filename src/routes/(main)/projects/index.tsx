@@ -88,7 +88,7 @@ export default component$(() => {
               <CardLink href={project.link.href}>{project.name}</CardLink>
             </h2>
             <CardDescription>{project.description}</CardDescription>
-            <p class="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+            <p class="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:group-hover:text-violet-500 dark:text-zinc-200">
               <LinkIcon class="h-6 w-6 flex-none" />
               <span class="ml-2">{project.link.label}</span>
             </p>
