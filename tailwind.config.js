@@ -1,9 +1,12 @@
+const animations = require("tailwindcss-animated");
+const typography = require("@tailwindcss/typography");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   darkMode: "class",
 
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [typography, animations],
   theme: {
     fontSize: {
       xs: ["0.8125rem", { lineHeight: "1.5rem" }],
@@ -25,11 +28,10 @@ module.exports = {
         css: {
           "--tw-prose-body": "var(--tw-prose-invert-body)",
           "--tw-prose-headings": "var(--tw-prose-invert-headings)",
-          "--tw-prose-links": "var(--tw-prose-invert-links)",
-          "--tw-prose-links-hover": "var(--tw-prose-invert-links-hover)",
-          "--tw-prose-underline": "var(--tw-prose-invert-underline)",
-          "--tw-prose-underline-hover":
-            "var(--tw-prose-invert-underline-hover)",
+          "--tw-prose-links": theme("colors.violet.500"),
+          "--tw-prose-links-hover": theme("colors.violet.400"),
+          "--tw-prose-underline": theme("colors.violet.500 / 0.2"),
+          "--tw-prose-underline-hover": theme("colors.violet.500"),
           "--tw-prose-bold": "var(--tw-prose-invert-bold)",
           "--tw-prose-counters": "var(--tw-prose-invert-counters)",
           "--tw-prose-bullets": "var(--tw-prose-invert-bullets)",
