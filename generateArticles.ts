@@ -1,6 +1,6 @@
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
+import path from "path";
 
 function extractFrontmatter(content: any) {
   const { data } = matter(content);
@@ -16,7 +16,7 @@ type ArticleData = null | {
 function getAllArticles(): ArticleData[] {
   const articlesDirectory = path.join(
     __dirname,
-    "./src/routes/articles/(article)"
+    "./src/routes/(main)/articles/(article)"
   );
   const articleFolders = fs.readdirSync(articlesDirectory).filter(
     (folder) => fs.statSync(path.join(articlesDirectory, folder)).isDirectory() // Solo carpetas

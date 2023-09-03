@@ -34,7 +34,7 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead, LinkProps } from "@builder.io/qwik-city";
 import { Link, useNavigate } from "@builder.io/qwik-city";
 
-import articles from "./articles.json";
+import articles from "../articles.json";
 
 const MailIcon = component$<HTMLAttributes<HTMLElement>>(({ ...props }) => {
   return (

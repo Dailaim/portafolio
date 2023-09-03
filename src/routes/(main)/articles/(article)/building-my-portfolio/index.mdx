@@ -1,0 +1,54 @@
+---
+author: "Leonardo Iglesias"
+date: "2023-09-23"
+title: "Building My Portfolio: A Journey from React to Qwik"
+description: "From initial uncertainty to technical accomplishment, follow my odyssey in adapting a React template to Qwik, facing challenges, learning, and ultimately customizing my website in my unique way."
+---
+
+When I started this website, I was swamped with uncertainty: React or some other technology? Did I really need a portfolio? However, certain circumstances, including a fruitless month-long job search and some personal events, drove me to go forward with this project.
+
+## Why?
+
+Inactivity and mental stagnation frustrated me. I needed an outlet to channel my energy, and so the idea of this website emerged. But I found myself at a dead end: the design did not resonate with my expectations, and I was indecisive about which technology to choose. Moreover, the final purpose of the site remained unclear to me.
+
+## Which Technology to Use?
+
+After experimenting with various technologies, I stumbled upon Qwik. Even though it had only been a few months since I discovered it, I was captivated by its features. I began tinkering with small projects in Qwik, and somehow, I found myself getting more and more hooked. Despite jokes about being a "Qwik lover", I've always said I'm more of a "TSX lover".
+
+When decision time came, two contenders remained: Qwik and React. Though I can't quite pinpoint why, I leaned towards Qwik. I wanted to challenge myself, try something new, and make a difference.
+
+## What Did I Want to Do?
+
+My vision was simple: a straightforward website. I didn't want to overcomplicate things, so I thought of using a template. However, there were no templates for Qwik. I settled for a React one with the intention of adapting it. After days of searching, I found a perfect template, though it wasn't free. I decided to invest in it and start the adaptation to Qwik.
+
+At first, I assumed the transition would be smooth, given that Qwik and React share similarities. But I was mistaken. Although on the surface they might seem alike, their philosophy and approach, especially in component management and server-side rendering, differ significantly.
+
+Upon seeing the template for the first time, I thought, "this is it." I tried to adapt it, but my head was swirling, not knowing where to begin. I just kept trying to adapt it, but still didn't know where to start. All I was doing was copying and pasting code from React to Qwik. But it didn't work. After a few hours of frustration, I decided to leave it be. But the idea of how I should do it lingered in my mind. The project sat idle for days. I genuinely didn't know what I was doing, and I just left it. A few days later, I asked myself, "Wasn't I building my portfolio?" I looked at what I'd done and thought, "I've done nothing, and what I did doesn't work." So, I decided to start from scratch. But this time, I tried to understand each part of the template and how it worked. And so, I started mapping out a route.
+
+## My Journey Migrating from React to Qwik
+
+### First Steps: The Component Dilemma
+
+Initially, my strategy was to translate all React components to Qwik. However, this approach didn't pan out as expected. I changed tactics, focusing first on the pages and then on dependencies associated with React. I started with components that had no dependencies, and that's where I felt my first whiff of success.
+
+### The Discovery: It's Not As Hard As It Seems
+
+After several hours, I'd translated most of the components and realized the process wasn't as daunting as I'd imagined. Once I got the hang of the components, I tackled the pages individually. Every time I encountered a React library dependency, I simply commented it out, then focused on the core functionality.
+
+### Challenging Limitations: Rendering Markdown with Qwik
+
+One of the most significant challenges was how markdown files were rendered. In React, there was a loop that went through all markdown files and rendered them. While Qwik has a native way of doing this, the loop in React offered additional functionalities.
+
+Qwik doesn't allow dynamic imports, so I had to get creative. The solution was a script that runs before compilation to generate a JSON with the required information. This enabled article previews on other pages.
+
+### Tackling UI Challenges: Libraries and Animations
+
+The migration process of libraries designed to optimize the UI on mobile devices proved to be quite an achievement. My initial approach was to try and directly translate the library component to Qwik. However, I faced obstacles, especially because the component was based on React with classes and had a complex code. This is where Qwifly, a tool capable of executing React code in Qwik, became my invaluable ally. Using Qwifly, I was able to run the React code within Qwik to understand its dynamics, and thanks to this, faithfully recreate the components. However, the animations were still missing. Fortunately, with the valuable support of a friend, @TaliAly, the animations were successfully implemented using CSS.
+
+### Overcoming the Final Hurdle: Theme Switching
+
+I thought I was done, but then I ran into an issue with the theme switch from light to dark. A library called Next-theme was causing problems. I decided to translate it, and in the end, managed a smooth transition between modes without the annoying initial "flash".
+
+### Customizing My Template: Beyond Migration
+
+With the template now fully operational, I decided to further customize it. I felt it was a bit plain, so I added unique elements, even some easter eggs. During this process, I created a "graper" to display particles on the sides of the page. I was so proud of this addition that I proposed integrating it into the original project, and it was accepted!
