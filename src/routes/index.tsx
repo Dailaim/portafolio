@@ -32,7 +32,7 @@ import { formatDate } from "@/lib/formatDate";
 import type { HTMLAttributes } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead, LinkProps } from "@builder.io/qwik-city";
-import { Link } from "@builder.io/qwik-city";
+import { Link, useNavigate } from "@builder.io/qwik-city";
 
 import articles from "./articles.json";
 
@@ -239,6 +239,8 @@ const Photos = component$(() => {
     "-rotate-2",
   ];
 
+  const nav = useNavigate();
+
   return (
     <div class="mt-16 sm:mt-20">
       <div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
@@ -246,6 +248,7 @@ const Photos = component$(() => {
           {
             light: image1,
             dark: image1Dark,
+            linkLight: "/one-more-time",
           },
           {
             light: image2,
@@ -263,26 +266,37 @@ const Photos = component$(() => {
             light: image5,
             dark: image5Dark,
           },
-        ].map((Image, imageIndex) => (
-          <div
-            key={`${imageIndex}+imageMain`}
-            class={Qclsx(
-              "relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl",
-              rotations[imageIndex % rotations.length]
-            )}
-          >
-            <Image.dark
-              alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
-              class="absolute inset-0 h-full w-full object-cover hidden dark:block"
-            />
-            <Image.light
-              alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
-              class="absolute inset-0 h-full w-full object-cover dark:hidden"
-            />
-          </div>
-        ))}
+        ].map((Image, imageIndex) => {
+          const { linkLight, linkDark } = Image;
+          return (
+            <div
+              key={`${imageIndex}+imageMain`}
+              class={Qclsx(
+                "relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl",
+                rotations[imageIndex % rotations.length]
+              )}
+            >
+              <Image.dark
+                alt=""
+                sizes="(min-width: 640px) 18rem, 11rem"
+                class="absolute inset-0 h-full w-full object-cover hidden dark:block"
+                onClick$={() => {
+                  if (!linkDark) return;
+                  nav(linkDark);
+                }}
+              />
+              <Image.light
+                alt=""
+                sizes="(min-width: 640px) 18rem, 11rem"
+                class="absolute inset-0 h-full w-full object-cover dark:hidden"
+                onClick$={() => {
+                  if (!linkLight) return;
+                  nav(linkLight);
+                }}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
