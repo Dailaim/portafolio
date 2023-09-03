@@ -280,7 +280,7 @@ const Photos = component$(() => {
               <Image.dark
                 alt=""
                 sizes="(min-width: 640px) 18rem, 11rem"
-                class="absolute inset-0 h-full w-full object-cover hidden dark:block"
+                class="absolute inset-0 h-full w-full object-cover hidden dark:block animate-fade animate-once animate-ease-in-out animate-alternate animate-fill-forwards"
                 onClick$={() => {
                   if (!linkDark) return;
                   nav(linkDark);
@@ -289,7 +289,7 @@ const Photos = component$(() => {
               <Image.light
                 alt=""
                 sizes="(min-width: 640px) 18rem, 11rem"
-                class="absolute inset-0 h-full w-full object-cover dark:hidden"
+                class="absolute inset-0 h-full w-full object-cover dark:hidden animate-fade animate-once animate-ease-in-out animate-alternate animate-fill-forwards"
                 onClick$={() => {
                   if (!linkLight) return;
                   nav(linkLight);
@@ -308,7 +308,7 @@ export default component$(() => {
     <>
       <Container class="mt-9">
         <div class="max-w-2xl">
-          <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+          <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl ">
             Software developer passionate about AI-driven photo editing and
             inspired by the beauty of flowers
           </h1>
@@ -343,9 +343,12 @@ export default component$(() => {
       <Container class="mt-24 md:mt-28">
         <div class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div class="flex flex-col gap-16">
-            {articles.map((article) => (
-              <Article key={article.slug} {...article} />
-            ))}
+            {articles
+              .sort((a, b) => b.date.localeCompare(a.date))
+              .slice(0, 3)
+              .map((article) => (
+                <Article key={article.slug} {...article} />
+              ))}
           </div>
           <div class="space-y-10 lg:pl-16 xl:pl-24">
             <Newsletter />

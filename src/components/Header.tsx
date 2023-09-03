@@ -111,8 +111,8 @@ export const ThemeToggle = component$(() => {
           setTheme(resolvedTheme.value === "dark" ? "light" : "dark");
         }}
       >
-        <SunIcon class="hover:animate-spin animate-twice animate-ease-out animate-reverse animate-fill-both h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600" />
-        <MoonIcon class="hover:animate-spin animate-twice animate-ease-out animate-reverse animate-fill-both  hidden h-6 w-6 fill-zinc-700 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-violet-500 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500 stroke-violet-500 " />
+        <SunIcon class="animate-spin animate-once animate-ease-out  animate-fill-both h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600" />
+        <MoonIcon class="animate-jump animate-once animate-ease-in-out animate-alternate animate-fill-forwards hidden h-6 w-6 fill-zinc-700 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-violet-500 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500 stroke-violet-500 " />
       </button>
     </>
   );
