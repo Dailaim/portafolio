@@ -261,6 +261,7 @@ const Photos = component$(() => {
           {
             light: image4,
             dark: image4Dark,
+            linkDark: "/the-white",
           },
           {
             light: image5,
