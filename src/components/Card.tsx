@@ -23,9 +23,12 @@ export const Card = component$<
   HTMLAttributes<HTMLElement> & {
     as?: keyof JSX.IntrinsicElements;
   }
->(({ class: className }) => {
+>(({ class: className, ...props }) => {
   return (
-    <div class={Qclsx(className, "group relative flex flex-col items-start")}>
+    <div
+      class={Qclsx(className, "group relative flex flex-col items-start")}
+      {...props}
+    >
       <Slot />
     </div>
   );

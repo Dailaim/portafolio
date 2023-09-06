@@ -30,7 +30,7 @@ const Article = component$<{
         opacity: 1,
         transform: "translate3d(0, 20%, 0)",
       },
-      { delay: stagger(delay * 100) }
+      { delay: delay * 0.1 > 0.4 ? stagger(0.1 * delay) : delay * 0.1 }
     );
   });
 

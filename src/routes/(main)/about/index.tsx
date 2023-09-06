@@ -75,7 +75,7 @@ export default component$(() => {
             <ImgPortrait
               alt=""
               sizes="(min-width: 1024px) 32rem, 20rem"
-              class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+              class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 animate-fade animate-once animate-ease-in-out animate-alternate animate-fill-forwards"
             />
           </div>
         </div>

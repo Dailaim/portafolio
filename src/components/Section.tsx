@@ -1,12 +1,16 @@
+import type { HTMLAttributes } from "@builder.io/qwik";
 import { Slot, component$, useId } from "@builder.io/qwik";
 
-export const Section = component$<{
-  title: string;
-}>(({ title }) => {
+export const Section = component$<
+  HTMLAttributes<HTMLElement> & {
+    title: string;
+  }
+>(({ title, ...props }) => {
   const id = useId();
 
   return (
     <section
+      {...props}
       aria-labelledby={id}
       class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
     >
