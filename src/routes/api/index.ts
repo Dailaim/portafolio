@@ -1,7 +1,7 @@
 import { type RequestHandler } from "@builder.io/qwik-city";
 import { Server as SocketIoServer } from "socket.io";
 
-export const onGet: RequestHandler = async ({ json, platform, ...datums }) => {
+export const onGet: RequestHandler = async ({ platform }) => {
   if (platform.incomingMessage.socket.server.io) {
     console.log("Socket is already running");
   } else {

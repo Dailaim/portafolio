@@ -1,4 +1,4 @@
-import type { NoSerialize } from "@builder.io/qwik";
+/* import type { NoSerialize } from "@builder.io/qwik";
 import { $, component$, noSerialize, useSignal } from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
 
@@ -74,3 +74,4 @@ export default component$(() => {
     </div>
   );
 });
+ */
