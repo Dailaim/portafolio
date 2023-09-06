@@ -1,4 +1,4 @@
-import { type RequestHandler } from "@builder.io/qwik-city";
+/* import { type RequestHandler } from "@builder.io/qwik-city";
 import { Server as SocketIoServer } from "socket.io";
 
 export const onGet: RequestHandler = async ({ platform }) => {
@@ -10,3 +10,4 @@ export const onGet: RequestHandler = async ({ platform }) => {
     platform.incomingMessage.socket.server.io = io;
   }
 };
+ */
