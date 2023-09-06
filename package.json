@@ -16,7 +16,7 @@
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
-    "ga": "node ./generateArticles.js",
+    "ga": "node ./generateArticles.ts",
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
@@ -44,6 +44,7 @@
     "vite-tsconfig-paths": "4.2.0"
   },
   "dependencies": {
+    "motion": "^10.16.2",
     "simplex-noise": "^4.0.1",
     "tailwindcss-animated": "^1.0.1",
     "tsparticles": "^2.12.0",
