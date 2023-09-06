@@ -85,7 +85,7 @@ export default component$(() => {
             'Flor' the Future.
           </h1>
           <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-            <p>
+            <p class="text-justify">
               As a developer, I see beyond just lines of code, finding beauty in
               the finer details, much like the flowers that inspire me every
               day. Born and raised in Colombia, I've melded my passion for
@@ -94,7 +94,7 @@ export default component$(() => {
               my commitment to innovation and my aspiration to contribute a
               unique touch to the vast digital cosmos.
             </p>
-            <p>
+            <p class="text-justify">
               From my early days in programming, I've been enamored with the
               potential of turning abstract ideas into tangible realities. This
               enthusiasm has drawn me deep into the realm of AI-driven photo
@@ -109,8 +109,7 @@ export default component$(() => {
               any task that comes my way. My code isn't just a set of machine
               instructions; it's an extension of who I am, my interests, and how
               I perceive the world. Each project is a further step in my
-              journey, and through my open-source endeavors, I invite others to
-              join me—to explore, contribute, and keep learning together.
+              journey.
             </p>
           </div>
         </div>
