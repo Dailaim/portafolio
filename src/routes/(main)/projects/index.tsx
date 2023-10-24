@@ -45,6 +45,24 @@ export const projects = [
     },
     logo: logoOpenShuttle,
   },
+  {
+    name: "Component party dev",
+    description:
+      "A component party dev to build your own components and share them with the world.",
+    link: {
+      href: "https://component-party.dev/",
+      label: "component-party.dev",
+    },
+  },
+  {
+    name: "Sticky Board",
+    description:
+      "A simple sticky board to keep track of your notes and tasks.",
+    link: {
+      href: "https://github.com/Dailaim/notes-app",
+      label: "github.com",
+    },
+  }
 ];
 
 const LinkIcon = component$<HTMLAttributes<HTMLElement>>((props) => {
@@ -82,13 +100,18 @@ export default component$(() => {
         {projects.map(({ logo: Logo, ...project }) => (
           <Card as="li" key={project.name}>
             <div class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <img
+              {Logo && <img
                 src={Logo}
                 alt={project.name}
                 height={32}
                 width={32}
                 class="rounded-full"
-              />
+              />}
+              {
+                !Logo && <span>
+                  🎉
+                </span>
+              }
             </div>
             <h2 class="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
               <CardLink target="_blank" href={project.link.href}>{project.name}</CardLink>
