@@ -327,7 +327,7 @@ export default component$(() => {
               Icon={InstagramIcon}
             />
             <SocialLink
-              href="https://github.com/Daizaikun"
+              href="https://github.com/Dailaim"
               aria-label="Follow on GitHub"
               Icon={GitHubIcon}
             />

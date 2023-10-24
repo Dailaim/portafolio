@@ -126,7 +126,7 @@ export default component$(() => {
               Follow on Instagram
             </SocialLink>
             <SocialLink
-              href="https://github.com/Daizaikun"
+              href="https://github.com/Dailaim"
               icon={GitHubIcon}
               class="mt-4"
             >

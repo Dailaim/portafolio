@@ -40,7 +40,7 @@ export const projects = [
     description:
       "A user-friendly tool to dive deep into GitHub profiles and curate your favorite selections.",
     link: {
-      href: "https://github.com/Daizaikun/GitHub-User-Explorer/",
+      href: "https://github.com/Dailaim/GitHub-User-Explorer/",
       label: "github.com",
     },
     logo: logoOpenShuttle,
@@ -91,7 +91,7 @@ export default component$(() => {
               />
             </div>
             <h2 class="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <CardLink href={project.link.href}>{project.name}</CardLink>
+              <CardLink target="_blank" href={project.link.href}>{project.name}</CardLink>
             </h2>
             <CardDescription>{project.description}</CardDescription>
             <p class="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:group-hover:text-violet-500 dark:text-zinc-200">
