@@ -11,6 +11,18 @@ const RecyclingBikes = "/assets/svg/recycling.webp";
 
 export const projects = [
   {
+    name: "Propfrac Club",
+    description: "A platform for fractional real estate investments.",
+    link: { href: "https://listings.propfrac.club/", label: "propfrac.club" },
+    logo: "https://propfrac.club/wp-content/uploads/2024/02/cropped-Isotipo-PropFrac-Blanco-32x32.png",
+  },
+  {
+    name: "Flash Gas",
+    description: "A gas delivery service that brings the fuel to you.",
+    link: { href: "https://app.flashgas.com/", label: "flashgas.com" },
+    logo: "https://flashgas.com/wp-content/uploads/2022/12/cropped-FLAMA-32x32.png",
+  },
+  {
     name: "TS-Particles",
     description: "A lightweight TypeScript library for creating particles.",
     link: { href: "https://github.com/tsparticles", label: "github.com" },
