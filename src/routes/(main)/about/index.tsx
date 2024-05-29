@@ -103,7 +103,7 @@ export default component$(() => {
             </p>
             <p class="text-justify">
               <span class="dark:bg-violet-800 dark:text-purple-300 bg-teal-200 text-teal-900 px-2 rounded-md">
-                With two years of experience
+                With four years of experience
               </span>{" "}
               under my belt, my confidence has only grown. No challenge seems
               insurmountable, and I believe wholeheartedly that I can take on
