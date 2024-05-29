@@ -212,12 +212,11 @@ const Resume = component$(() => {
         {resume.map(({ Logo, ...role }, roleIndex) => (
           <li key={roleIndex} class="flex gap-4">
             <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              {
-                typeof Logo === "string" ? (
+              {typeof Logo === "string" ? (
                   <img
                     src={Logo}
                     alt={role.company}
-                  - height={28}
+                   height={28}
                     width={28}
                     class="rounded-full h-7 w-7"
                   />
@@ -225,6 +224,7 @@ const Resume = component$(() => {
                   <Logo class="h-7 w-7" alt={`${role.company} Icon`} />
                 )
               }
+              
             </div>
             <dl class="flex flex-auto flex-wrap gap-x-2">
               <dt class="sr-only">Company</dt>
@@ -254,7 +254,15 @@ const Resume = component$(() => {
           </li>
         ))}
       </ol>
-      <Button href="#" variant="secondary" class="group mt-6 w-full">
+      <Button 
+        as={Link}
+        href="/cv3.pdf"
+        download="Leonardo-CV.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        type="button"
+        size="lg"
+      variant="secondary" class="group mt-6 w-full">
         Download CV
         <ArrowDownIcon class="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
