@@ -29,21 +29,21 @@ import image1 from "@/images/photos/therose.png?jsx";
 import image4Dark from "@/images/photos/thewhite.png?jsx";
 import { Qclsx } from "@/lib/Qclsx";
 import { formatDate } from "@/lib/formatDate";
-import type { QwikAttributes } from "@builder.io/qwik";
+import type { LenientSVGProps, QwikAttributes } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead, LinkProps } from "@builder.io/qwik-city";
 import { Link, useNavigate } from "@builder.io/qwik-city";
 
 import articles from "../articles.json";
 
-const MailIcon = component$<QwikAttributes<HTMLElement>>(({ ...props }) => {
+const MailIcon = component$<LenientSVGProps<SVGSVGElement>>(({ ...props }) => {
   return (
     <svg
       viewBox="0 0 24 24"
       fill="none"
       stroke-width="1.5"
       stroke-linecap="round"
-      strokeinejoin="round"
+      stroke-linejoin="round"
       aria-hidden="true"
       {...props}
     >
@@ -59,7 +59,7 @@ const MailIcon = component$<QwikAttributes<HTMLElement>>(({ ...props }) => {
   );
 });
 
-const BriefcaseIcon = component$<QwikAttributes<HTMLElement>>((props) => {
+const BriefcaseIcon = component$<LenientSVGProps<SVGSVGElement>>((props) => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -281,33 +281,35 @@ const Photos = component$(() => {
 
   const nav = useNavigate();
 
+  const images = [
+    {
+      light: image1,
+      dark: image1Dark,
+      linkLight: "/one-more-time",
+    },
+    {
+      light: image2,
+      dark: image2Dark,
+    },
+    {
+      light: image3,
+      dark: image3Dark,
+    },
+    {
+      light: image4,
+      dark: image4Dark,
+      linkDark: "/the-white",
+    },
+    {
+      light: image5,
+      dark: image5Dark,
+    },
+  ]
+
   return (
     <div class="mt-16 sm:mt-20">
       <div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[
-          {
-            light: image1,
-            dark: image1Dark,
-            linkLight: "/one-more-time",
-          },
-          {
-            light: image2,
-            dark: image2Dark,
-          },
-          {
-            light: image3,
-            dark: image3Dark,
-          },
-          {
-            light: image4,
-            dark: image4Dark,
-            linkDark: "/the-white",
-          },
-          {
-            light: image5,
-            dark: image5Dark,
-          },
-        ].map((Image, imageIndex) => {
+        {images.map((Image, imageIndex) => {
           const { linkLight, linkDark } = Image;
           return (
             <div
@@ -317,24 +319,24 @@ const Photos = component$(() => {
                 rotations[imageIndex % rotations.length]
               )}
             >
+              <button
+                  onClick$={() => {
+                  if (!linkLight && !linkDark) return;
+                  nav(linkLight ?? linkDark);
+                }}
+              >
+
               <Image.dark
                 alt=""
                 sizes="(min-width: 640px) 18rem, 11rem"
                 class="absolute inset-0 h-full w-full object-cover hidden dark:block animate-fade animate-once animate-ease-in-out animate-alternate animate-fill-forwards"
-                onClick$={() => {
-                  if (!linkDark) return;
-                  nav(linkDark);
-                }}
-              />
+                />
               <Image.light
                 alt=""
                 sizes="(min-width: 640px) 18rem, 11rem"
                 class="absolute inset-0 h-full w-full object-cover dark:hidden animate-fade animate-once animate-ease-in-out animate-alternate animate-fill-forwards"
-                onClick$={() => {
-                  if (!linkLight) return;
-                  nav(linkLight);
-                }}
-              />
+                />
+                </button>
             </div>
           );
         })}

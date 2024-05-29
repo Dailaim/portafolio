@@ -22,6 +22,10 @@ export const Button = component$<
     target?: "_blank";
     class?: string;
     type?: "button" | "submit" | "reset";
+    download?: string;
+    rel?: string;
+    size?: "sm" | "md" | "lg";
+
 
   }
 >(
