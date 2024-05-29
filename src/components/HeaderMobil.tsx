@@ -1,6 +1,6 @@
 import { Qclsx } from "@/lib/Qclsx";
 import { routes } from "@/lib/routes";
-import type { HTMLAttributes, Signal } from "@builder.io/qwik";
+import type { HTMLAttributes, LenientSVGProps, QwikAttributes, Signal } from "@builder.io/qwik";
 import {
   $,
   Slot,
@@ -13,7 +13,7 @@ import type { LinkProps } from "@builder.io/qwik-city";
 import { Link } from "@builder.io/qwik-city";
 import enterAnimation from "./HeaderMobil.css?inline";
 
-const BackGround = component$<HTMLAttributes<HTMLElement>>(
+const BackGround = component$<QwikAttributes<HTMLElement>>(
   ({ class: ClassName, ...props }) => {
     return (
       <div
@@ -64,7 +64,7 @@ export const Mobile = component$<{
 
   return (
     <BackGround
-      hidden={hiddenDelay.value}
+
       class={[
         {
           hidden: valueSignal.value ? !valueSignal.value : hiddenDelay.value,
@@ -129,30 +129,30 @@ export const MobileNavigation = component$<HTMLAttributes<HTMLElement>>(
   }
 );
 
-const CloseIcon = component$<HTMLAttributes<HTMLElement>>((props) => {
+const CloseIcon = component$<LenientSVGProps<SVGSVGElement>>((props) => {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
         d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
     </svg>
   );
 });
 
-const ChevronDownIcon = component$<HTMLAttributes<HTMLElement>>((props) => {
+const ChevronDownIcon = component$<LenientSVGProps<SVGSVGElement>>((props) => {
   return (
     <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
       <path
         d="M1.75 1.75 4 4.25l2.25-2.5"
         fill="none"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
     </svg>
   );

@@ -1,7 +1,6 @@
 import { Qclsx } from "@/lib/Qclsx";
-import type { Component, HTMLAttributes, PropsOf } from "@builder.io/qwik";
+import type { Component, QwikAttributes } from "@builder.io/qwik";
 import { Slot, component$ } from "@builder.io/qwik";
-import type { JSX } from "@builder.io/qwik/jsx-runtime";
 
 const variantStyles = {
   primary:
@@ -11,12 +10,12 @@ const variantStyles = {
 };
 
 
-// type AnyComponetHTML = <T extends keyof HTMLElementTagNameMap >(props: { as: T }) => Component<HTMLAttributes<HTMLElementTagNameMap[T]>> ;
+// type AnyComponetHTML = <T extends keyof HTMLElementTagNameMap >(props: { as: T }) => Component<QwikAttributes<HTMLElementTagNameMap[T]>> ;
 
 // type AnyComponetExtend = <T extends Component<any>>(props: { as: T }) => T;
 
 export const Button = component$<
-  HTMLAttributes<HTMLElement> & {
+  QwikAttributes<HTMLElement> & {
     as?: Component<any> | keyof HTMLElementTagNameMap;
     variant?: keyof typeof variantStyles;
     href?: string;

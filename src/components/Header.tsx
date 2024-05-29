@@ -1,6 +1,6 @@
 import { Container } from "@/components/Container";
 import { Qclsx } from "@/lib/Qclsx";
-import type { HTMLAttributes, Signal } from "@builder.io/qwik";
+import type { QwikAttributes, Signal } from "@builder.io/qwik";
 import {
   $,
   Slot,
@@ -15,13 +15,13 @@ import { routes } from "@/lib/routes";
 import { Avatar, AvatarContainer } from "./Avatar";
 import { MobileNavigation } from "./HeaderMobil";
 
-export const SunIcon = component$<HTMLAttributes<HTMLElement>>((props) => {
+export const SunIcon = component$<QwikAttributes<HTMLElement>>((props) => {
   return (
     <svg
       viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       aria-hidden="true"
       {...props}
     >
@@ -34,21 +34,21 @@ export const SunIcon = component$<HTMLAttributes<HTMLElement>>((props) => {
   );
 });
 
-export const MoonIcon = component$<HTMLAttributes<HTMLElement>>((props) => {
+export const MoonIcon = component$<QwikAttributes<HTMLElement>>((props) => {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
         d="M17.25 16.22a6.937 6.937 0 0 1-9.47-9.47 7.451 7.451 0 1 0 9.47 9.47ZM12.75 7C17 7 17 2.75 17 2.75S17 7 21.25 7C17 7 17 11.25 17 11.25S17 7 12.75 7Z"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
     </svg>
   );
 });
 
 export const NavItem = component$<
-  HTMLAttributes<HTMLElement> & { href: string }
+  QwikAttributes<HTMLElement> & { href: string }
 >(({ href }) => {
   const isActive = useLocation().url.pathname === `${href}/`;
 
@@ -72,7 +72,7 @@ export const NavItem = component$<
   );
 });
 
-export const DesktopNavigation = component$<HTMLAttributes<HTMLElement>>(
+export const DesktopNavigation = component$<QwikAttributes<HTMLElement>>(
   (props) => {
     return (
       <nav {...props}>
@@ -119,7 +119,7 @@ export const ThemeToggle = component$(() => {
 });
 
 export const AvatarComponent = component$<
-  HTMLAttributes<HTMLElement> & {
+  QwikAttributes<HTMLElement> & {
     headerRef: Signal<HTMLElement | undefined>;
   }
 >(({ headerRef }) => {

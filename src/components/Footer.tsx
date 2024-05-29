@@ -1,12 +1,12 @@
 import { InnerContainer, OuterContainer } from "@/components/Container";
 import { myName } from "@/lib/const";
 import { routes } from "@/lib/routes";
-import type { HTMLAttributes } from "@builder.io/qwik";
+import type { QwikAttributes } from "@builder.io/qwik";
 import { Slot, component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 
 const NavLink = component$<
-  { href: string } & HTMLAttributes<HTMLAnchorElement>
+  { href: string } & QwikAttributes<HTMLAnchorElement>
 >(({ href }) => {
   return (
     <Link

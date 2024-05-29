@@ -1,8 +1,8 @@
 import { Qclsx } from "@/lib/Qclsx";
-import type { HTMLAttributes } from "@builder.io/qwik";
+import type { QwikAttributes } from "@builder.io/qwik";
 import { Slot, component$ } from "@builder.io/qwik";
 
-export const OuterContainer = component$<HTMLAttributes<HTMLDivElement>>(
+export const OuterContainer = component$<QwikAttributes<HTMLDivElement>>(
   ({ ref, class: className, ...props }) => {
     return (
       <div ref={ref} class={Qclsx("sm:px-8", className)} {...props}>
@@ -14,7 +14,7 @@ export const OuterContainer = component$<HTMLAttributes<HTMLDivElement>>(
   }
 );
 
-export const InnerContainer = component$<HTMLAttributes<HTMLDivElement>>(
+export const InnerContainer = component$<QwikAttributes<HTMLDivElement>>(
   ({ class: className, ref, ...props }) => {
     return (
       <div
@@ -30,7 +30,7 @@ export const InnerContainer = component$<HTMLAttributes<HTMLDivElement>>(
   }
 );
 
-export const Container = component$<HTMLAttributes<HTMLDivElement>>(
+export const Container = component$<QwikAttributes<HTMLDivElement>>(
   ({ ref, ...props }) => {
     return (
       <OuterContainer ref={ref} {...props}>

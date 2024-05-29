@@ -1,5 +1,5 @@
-import type { HTMLAttributes } from "@builder.io/qwik"
+import type { QwikAttributes } from "@builder.io/qwik"
 
-export const Qclsx = (...className: HTMLAttributes<HTMLDivElement>["class"][])=>{
-  return className.flat() as HTMLAttributes<HTMLDivElement>["class"]
+export const Qclsx = (...className: QwikAttributes<HTMLDivElement>["class"][])=>{
+  return className.flat() as QwikAttributes<HTMLElement>["class"]
 }

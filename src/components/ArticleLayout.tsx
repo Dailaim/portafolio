@@ -1,24 +1,25 @@
 import { Container } from "@/components/Container";
 import { Prose } from "@/components/Prose";
 import { formatDate } from "@/lib/formatDate";
-import { Slot, component$, type HTMLAttributes } from "@builder.io/qwik";
+import type { LenientSVGProps} from "@builder.io/qwik";
+import { Slot, component$, type QwikAttributes } from "@builder.io/qwik";
 import { useLocation, useNavigate } from "@builder.io/qwik-city";
 
-const ArrowLeftIcon = component$<HTMLAttributes<HTMLElement>>((props) => {
+const ArrowLeftIcon = component$<LenientSVGProps<SVGSVGElement>>((props) => {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
         d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
     </svg>
   );
 });
 
 export const ArticleLayout = component$<
-  HTMLAttributes<HTMLDivElement> & {
+  QwikAttributes<HTMLDivElement> & {
     isRssFeed?: boolean;
     title: string;
     date: string;

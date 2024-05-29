@@ -1,4 +1,4 @@
-import type { HTMLAttributes, QRL } from "@builder.io/qwik";
+import type { QwikAttributes, QRL } from "@builder.io/qwik";
 import { component$, useVisibleTask$ } from "@builder.io/qwik";
 
 export type sticky = {
@@ -23,7 +23,7 @@ const colors: Record<sticky["color"], string> = {
 };
 
 export const Sticker = component$<
-  HTMLAttributes<HTMLDivElement> & {
+  QwikAttributes<HTMLDivElement> & {
     card: Partial<sticky>;
     delete$?: QRL<() => void>;
     saveText$?: QRL<() => void>;

@@ -1,11 +1,11 @@
 import { Qclsx } from "@/lib/Qclsx";
-import type { HTMLAttributes } from "@builder.io/qwik";
+import type { QwikAttributes } from "@builder.io/qwik";
 import { Slot, component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 
 import AvataImage from "@/images/avatar.webp?jsx";
 
-export const AvatarContainer = component$<HTMLAttributes<HTMLElement>>(
+export const AvatarContainer = component$<QwikAttributes<HTMLElement>>(
   ({ class: className, ...props }) => {
     return (
       <div
@@ -22,13 +22,13 @@ export const AvatarContainer = component$<HTMLAttributes<HTMLElement>>(
 );
 
 export const Avatar = component$<
-  HTMLAttributes<HTMLElement> & { large?: boolean }
+QwikAttributes<HTMLElement> & { large?: boolean }
 >(({ large = false, class: className, ...props }) => {
   return (
     <Link
       href="/"
       aria-label="Home"
-      class={Qclsx(className, "pointer-events-auto")}
+      class={Qclsx(className, "pointer-events-auto") }
       {...props}
     >
       <AvataImage

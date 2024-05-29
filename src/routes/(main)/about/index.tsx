@@ -8,14 +8,15 @@ import ImgPortrait from "@/images/portrait.webp?jsx";
 import { Qclsx } from "@/lib/Qclsx";
 import type {
   FunctionComponent,
-  HTMLAttributes,
+  QwikAttributes,
   JSXNode,
+  LenientSVGProps,
 } from "@builder.io/qwik";
 import { Slot, component$ } from "@builder.io/qwik";
 import { Link, type DocumentHead, type LinkProps } from "@builder.io/qwik-city";
 
 const SocialLink = component$<
-  HTMLAttributes<HTMLAnchorElement> &
+  QwikAttributes<HTMLAnchorElement> &
     LinkProps & {
       icon: JSXNode<string | FunctionComponent<Record<string, any>>> | any;
     }
@@ -35,11 +36,11 @@ const SocialLink = component$<
   );
 });
 
-const MailIcon = component$((props) => {
+const MailIcon = component$<LenientSVGProps<SVGSVGElement>>((props) => {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
-        fillRule="evenodd"
+        fill-rule="evenodd"
         d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
       />
     </svg>

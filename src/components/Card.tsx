@@ -1,18 +1,18 @@
 import { Qclsx } from "@/lib/Qclsx";
-import type { Component, HTMLAttributes } from "@builder.io/qwik";
+import type { Component, QwikAttributes, LenientSVGProps } from "@builder.io/qwik";
 import { Slot, component$ } from "@builder.io/qwik";
 import type { LinkProps } from "@builder.io/qwik-city";
 import { Link } from "@builder.io/qwik-city";
 import type { JSX } from "@builder.io/qwik/jsx-runtime";
 
-const ChevronRightIcon = component$<HTMLAttributes<HTMLElement>>((props) => {
+const ChevronRightIcon = component$<LenientSVGProps<SVGSVGElement>>((props) => {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
         d="M6.75 5.75 9.25 8l-2.5 2.25"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
     </svg>
   );
@@ -20,7 +20,7 @@ const ChevronRightIcon = component$<HTMLAttributes<HTMLElement>>((props) => {
 
 // fixme: this is a hack to get around the fact that we can't use
 export const Card = component$<
-  HTMLAttributes<HTMLElement> & {
+QwikAttributes<HTMLElement> & {
     as?: keyof JSX.IntrinsicElements;
   }
 >(({ class: className, ...props }) => {
@@ -49,7 +49,7 @@ export const CardLink: Component<LinkProps> = component$(({ ...props }) => {
 });
 
 export const CardTitle = component$<
-  HTMLAttributes<HTMLElement> & {
+  QwikAttributes<HTMLElement> & {
     as?: keyof JSX.IntrinsicElements;
     href?: string;
   }
@@ -88,7 +88,7 @@ export const CardCta = component$(() => {
 });
 
 export const CardEyebrow = component$<
-  HTMLAttributes<HTMLElement> & {
+  QwikAttributes<HTMLElement> & {
     as?: keyof JSX.IntrinsicElements;
     decorate?: boolean;
     dateTime?: string;

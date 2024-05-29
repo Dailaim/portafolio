@@ -1,9 +1,9 @@
-import type { HTMLAttributes } from "@builder.io/qwik";
+import type { QwikAttributes } from "@builder.io/qwik";
 import { Slot, component$ } from "@builder.io/qwik";
 import type { sticky } from "./sticky";
 
 export const Box = component$<
-  HTMLAttributes<HTMLDivElement> & {
+  QwikAttributes<HTMLDivElement> & {
     color: sticky["color"];
   }
 >(({ color, ...props }) => {

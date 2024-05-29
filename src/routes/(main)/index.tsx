@@ -29,20 +29,20 @@ import image1 from "@/images/photos/therose.png?jsx";
 import image4Dark from "@/images/photos/thewhite.png?jsx";
 import { Qclsx } from "@/lib/Qclsx";
 import { formatDate } from "@/lib/formatDate";
-import type { HTMLAttributes } from "@builder.io/qwik";
+import type { QwikAttributes } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead, LinkProps } from "@builder.io/qwik-city";
 import { Link, useNavigate } from "@builder.io/qwik-city";
 
 import articles from "../articles.json";
 
-const MailIcon = component$<HTMLAttributes<HTMLElement>>(({ ...props }) => {
+const MailIcon = component$<QwikAttributes<HTMLElement>>(({ ...props }) => {
   return (
     <svg
       viewBox="0 0 24 24"
       fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
       strokeinejoin="round"
       aria-hidden="true"
       {...props}
@@ -59,14 +59,14 @@ const MailIcon = component$<HTMLAttributes<HTMLElement>>(({ ...props }) => {
   );
 });
 
-const BriefcaseIcon = component$<HTMLAttributes<HTMLElement>>((props) => {
+const BriefcaseIcon = component$<QwikAttributes<HTMLElement>>((props) => {
   return (
     <svg
       viewBox="0 0 24 24"
       fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       aria-hidden="true"
       {...props}
     >
@@ -82,14 +82,14 @@ const BriefcaseIcon = component$<HTMLAttributes<HTMLElement>>((props) => {
   );
 });
 
-const ArrowDownIcon = component$<HTMLAttributes<SVGSVGElement>>((props) => {
+const ArrowDownIcon = component$<QwikAttributes<SVGSVGElement>>((props) => {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
         d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
     </svg>
   );

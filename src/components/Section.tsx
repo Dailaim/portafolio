@@ -1,8 +1,8 @@
-import type { HTMLAttributes } from "@builder.io/qwik";
+import type { QwikAttributes } from "@builder.io/qwik";
 import { Slot, component$, useId } from "@builder.io/qwik";
 
 export const Section = component$<
-  HTMLAttributes<HTMLElement> & {
+  QwikAttributes<HTMLElement> & {
     title: string;
   }
 >(({ title, ...props }) => {
