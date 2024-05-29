@@ -1,5 +1,5 @@
 import { Qclsx } from "@/lib/Qclsx";
-import type { Component, QwikAttributes, LenientSVGProps } from "@builder.io/qwik";
+import type { Component, QwikAttributes, LenientSVGProps, HtmlHTMLAttributes } from "@builder.io/qwik";
 import { Slot, component$ } from "@builder.io/qwik";
 import type { LinkProps } from "@builder.io/qwik-city";
 import { Link } from "@builder.io/qwik-city";
@@ -20,7 +20,7 @@ const ChevronRightIcon = component$<LenientSVGProps<SVGSVGElement>>((props) => {
 
 // fixme: this is a hack to get around the fact that we can't use
 export const Card = component$<
-QwikAttributes<HTMLElement> & {
+QwikAttributes<HTMLElement> & HtmlHTMLAttributes<HTMLElement>  & {
     as?: keyof JSX.IntrinsicElements;
   }
 >(({ class: className, ...props }) => {
