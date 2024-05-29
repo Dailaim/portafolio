@@ -1,6 +1,6 @@
 import { Container } from "@/components/Container";
 import { Qclsx } from "@/lib/Qclsx";
-import type { QwikAttributes, Signal } from "@builder.io/qwik";
+import type { LenientSVGProps, QwikAttributes, Signal } from "@builder.io/qwik";
 import {
   $,
   Slot,
@@ -15,7 +15,7 @@ import { routes } from "@/lib/routes";
 import { Avatar, AvatarContainer } from "./Avatar";
 import { MobileNavigation } from "./HeaderMobil";
 
-export const SunIcon = component$<QwikAttributes<HTMLElement>>((props) => {
+export const SunIcon = component$<LenientSVGProps<SVGSVGElement>>((props) => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -34,7 +34,7 @@ export const SunIcon = component$<QwikAttributes<HTMLElement>>((props) => {
   );
 });
 
-export const MoonIcon = component$<QwikAttributes<HTMLElement>>((props) => {
+export const MoonIcon = component$<LenientSVGProps<SVGSVGElement>>((props) => {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -48,7 +48,7 @@ export const MoonIcon = component$<QwikAttributes<HTMLElement>>((props) => {
 });
 
 export const NavItem = component$<
-  QwikAttributes<HTMLElement> & { href: string }
+  LenientSVGProps<SVGSVGElement> & { href: string }
 >(({ href }) => {
   const isActive = useLocation().url.pathname === `${href}/`;
 
@@ -119,7 +119,7 @@ export const ThemeToggle = component$(() => {
 });
 
 export const AvatarComponent = component$<
-  QwikAttributes<HTMLElement> & {
+  LenientSVGProps<SVGSVGElement> & {
     headerRef: Signal<HTMLElement | undefined>;
   }
 >(({ headerRef }) => {
