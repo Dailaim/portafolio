@@ -162,11 +162,11 @@ const Resume = component$(() => {
   const resume = [
     {
       company: "NutriaSoft (FaztCommunity)",
-      title: "CTO",
+      title: "Backend Developer",
       Logo: NutriaSoftLogo,
       start: {
         label: undefined,
-        dateTime: "2021",
+        dateTime: "2023",
       },
       end: {
         label: "Present",
